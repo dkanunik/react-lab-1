@@ -1,6 +1,10 @@
-### React lab 1
+## React lab 1
 
 This is a laboratory project to study the web app creation based on React
+
+---
+
+### Back-end
 
 #### Environment variables:
 ```
@@ -25,3 +29,19 @@ DELETE  /book/:id
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 ```
+
+#### Docs:
+
+- https://www.mongodb.com/
+- https://mongoosejs.com/ 
+
+
+---
+
+### Front-end
+
+#### Docs:
+
+- https://react.dev/
+- https://vitejs.dev/
+- https://tailwindcss.com/docs/guides/vite
