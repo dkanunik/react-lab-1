@@ -1,4 +1,5 @@
 import { Book } from '../models/book-model.js'
+import express from "express";
 
 const router = express.Router();
 
@@ -29,7 +30,7 @@ router.post('', async (request, response) => {
 
 router.get('/', async (request, response) => {
     try {
-        const books: Array<Book> = await Book.find({});
+        let books = await Book.find({});
         return response.status(200).json({
             count: books.length,
             data: books
@@ -45,7 +46,7 @@ router.get('/', async (request, response) => {
 router.get('/:id', async (request, response) => {
     try {
         const { id } = request.params;
-        const book: Array<Book> = await Book.findById(id);
+        let book = await Book.findById(id);
         return response.status(200).json(book);
     } catch (e) {
         console.log(e.message);

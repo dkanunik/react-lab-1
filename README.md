@@ -16,11 +16,11 @@ This is a laboratory project to study the web app creation based on React
 #### Back-end endpoints:
 
 ```
-POST /book [title, author, publishYear]
-GET  /books
-GET  /books/:id [book_id]
-PUT  /book/:id [title, author, publishYear]
-DELETE  /book/:id
+POST     /book {title, author, publishYear}
+GET      /books
+GET      /books/:id
+PUT      /book/:id {title, author, publishYear}
+DELETE   /book/:id
 ```
 
 #### CORS settings:
@@ -45,3 +45,4 @@ DELETE  /book/:id
 - https://react.dev/
 - https://vitejs.dev/
 - https://tailwindcss.com/docs/guides/vite
+- https://github.com/axios/axios
