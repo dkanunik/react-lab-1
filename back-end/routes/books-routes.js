@@ -3,7 +3,7 @@ import express from "express";
 
 const router = express.Router();
 
-router.post('', async (request, response) => {
+router.post('/', async (request, response) => {
     try {
         if (!request.body.title || !request.body.author || !request.body.publishYear) {
             return response.status(400).send({

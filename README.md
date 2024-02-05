@@ -6,6 +6,11 @@ This is a laboratory project to study the web app creation based on React
 
 ### Back-end
 
+### Run:
+```
+   $ npm run start
+```
+
 #### Environment variables:
 ```
     BE_DB_USER
@@ -39,6 +44,11 @@ DELETE   /book/:id
 ---
 
 ### Front-end
+
+### Run:
+```
+   $ npm run dev
+```
 
 #### Docs:
 
