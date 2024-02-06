@@ -4,10 +4,12 @@ import {Link} from "react-router-dom";
 import {MdOutlineAddBox, MdOutlineDelete} from "react-icons/md";
 import {BsInfoCircle} from "react-icons/bs";
 import {AiOutlineEdit} from "react-icons/ai";
+import Spinner from "../components/Spinner.jsx";
 
 const Home = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         setLoading(true);
         axios.get('http://localhost:5555/books')
@@ -20,6 +22,7 @@ const Home = () => {
                 setLoading(false);
             });
     }, []);
+
     return (
         <div className='p-4'>
             <div className='flex justify-between items-center'>
@@ -29,7 +32,7 @@ const Home = () => {
                 </Link>
             </div>
             {loading
-                ? (<div>Spinner</div>)
+                ? (<Spinner/>)
                 : (
                     <table className='w-full border-separate border-spacing-2'>
                         <thead>
@@ -56,11 +59,11 @@ const Home = () => {
                                     {book.author}
                                 </td>
 
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+                                <td className='border border-slate-700 rounded-md text-center max-md:hidden w-1/12'>
                                     {book.publishYear}
                                 </td>
 
-                                <td className='border border-slate-700 rounded-md text-center'>
+                                <td className='border border-slate-700 rounded-md text-center w-1/12'>
                                     <div className='flex justify-center gap-x-4'>
                                         <Link to={`/books/details/${book._id}`}>
                                             <BsInfoCircle className='text-2xl text-green-800'/>
@@ -72,7 +75,6 @@ const Home = () => {
                                             <MdOutlineDelete className='text-2xl text-green-800'/>
                                         </Link>
                                     </div>
-                                    {book.publishYear}
                                 </td>
                             </tr>
                         ))}
